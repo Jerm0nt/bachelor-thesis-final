@@ -54,13 +54,13 @@ eintragen. Diese bestimmt den Anteil der payload and den Übertragungseinheiten.
 
 ### Ausführung
 
-1. Zwei Terminals oder Terminal-Tabs öffnen. In beiden in den core-Ordner des Projekts navigieren. Die Dateien discord_agent.py und discord_server.py in je einem Terminal-Tab oder -Fenster ausführen:
-> python3 discord_agent.py
-> python3 discord_server.py
-Das Terminal-Fenster muss „Agent-Bot is ready! “ bzw. „Server-Bot is ready! “ ausgeben.
+1. Zwei Terminals oder Terminal-Tabs öffnen. In beiden in den core-Ordner des Projekts navigieren. Die Dateien _discord_agent.py_ und _discord_server.py_ in je einem Terminal-Tab oder -Fenster ausführen:
+´python3 discord_agent.py´
+´python3 discord_server.py´
+Das Terminal-Fenster muss ´Agent-Bot is ready!´ bzw. ´Server-Bot is ready!´ ausgeben.
 
-2. In Discord den erstellten Server auswählen, den im XML-Template als server-token eingefügten Bot auswählen und eine Direktnachricht an diesen mit folgendem Inhalt senden: „.file_transfer {valider Dateipfad} “. Die Datei unter dem mitgesendeten Dateipfad muss sich dabei auf dem System das das discord_agent.py-Skript ausführt befinden.
+2. In Discord den erstellten Server auswählen, den im XML-Template als _server-token_ eingefügten Bot auswählen und eine Direktnachricht an diesen mit folgendem Inhalt senden: „.file_transfer {valider Dateipfad} “. Die Datei unter dem mitgesendeten Dateipfad muss sich dabei auf dem System das das _discord_agent.py_-Skript ausführt befinden.
 
-3. Bei erflogreichem Transfer sollte das Terminal-Fenster in dem der discord_server.py ausgeführt wird eine Erfolgsmeldung ausgeben. Nun sollte im assets/recieved-Ordner die geünschte Datei zu finden sein.
+3. Bei erflogreichem Transfer sollte das Terminal-Fenster in dem der _discord_server.py_ ausgeführt wird eine Erfolgsmeldung ausgeben. Nun sollte im assets/recieved-Ordner die geünschte Datei zu finden sein.
 
 -----
