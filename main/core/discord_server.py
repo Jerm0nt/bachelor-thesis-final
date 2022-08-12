@@ -22,7 +22,7 @@ async def on_ready():
 
 @client.command()
 async def file_transfer(ctx, file_path):
-    if ctx.author.avatar == client.TEMPLATE.commander_hash:
+    if ctx.author.id == client.TEMPLATE.commander_hash:
         buffer.submit_task(file_path.encode(), 1)
         if client.TRANSFER_IN_PROCESS is False:
             response_message = buffer.get_recent_task()
