@@ -6,7 +6,7 @@
         <payload-percentage></payload-percentage>
         <server-token></server-token>
         <client-token></client-token>
-        <commander-hash></commander-hash>
+        <commander-hash>1234</commander-hash>
         <client-channel></client-channel>
         <server-channel></server-channel>
     </DiscordTemplate>
