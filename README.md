@@ -13,7 +13,7 @@ Eingereicht von Jerome Eble
 ### Grundvorraussetzungen
 
 - Python 3 muss installiert sein
-- Folgende Python-Bibliothekten müssen installiert sein
+- Folgende Python-Bibliotheken müssen installiert sein
     - discord
     - black
     - declxml
