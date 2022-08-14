@@ -2,8 +2,6 @@ from base64 import b64encode
 from struct import calcsize, pack, unpack
 from random import randint
 
-from black import InvalidInput
-
 
 class SizeTag:
     SIZE_TAG_SIZE = 8
@@ -208,11 +206,23 @@ class DummyGenerator:
         "Auch",
     ]
 
+    MARKS = [".", ",", "!", "?"]
+
     def get_dummy_data(size):
         i = 0
         random_string = ""
+        index = 0
         while len(random_string) < size:
             i = randint(0, len(DummyGenerator.WORDS) - 1)
-            random_string = random_string + DummyGenerator.WORDS[i]
+            random_string = f"{random_string} {DummyGenerator.WORDS[i]}"
+            if index % 4 == 0:
+                i = randint(0, len(DummyGenerator.MARKS) - 1)
+                random_string = random_string + DummyGenerator.MARKS[i]
+            index = index + 1
 
-        return random_string[:size].encode()
+        string = random_string[:size]
+        if string[len(string)-1] == " ":
+            string = string[:len(string)-1]
+            string = f"{string}a"
+        return string.encode()
+
