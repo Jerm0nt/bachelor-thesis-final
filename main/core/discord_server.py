@@ -68,6 +68,8 @@ async def on_message(message):
         all_chunks = b""
         for chunk in client.CHUNK_ARRAY:
             all_chunks = all_chunks + chunk
+        if len(all_chunks) > len(client.CHUNK_ARRAY[0]):
+            print("round 2")
         if len(all_chunks) == client.SIZE_TAG.data_size:
             client.TASK_FULLY_RECIEVED = True
             temp_size_tag_data_size = client.SIZE_TAG.data_size

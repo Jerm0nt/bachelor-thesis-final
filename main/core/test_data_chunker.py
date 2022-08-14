@@ -1,6 +1,8 @@
 from base64 import b64decode, b64encode
 import unittest
 from data_chunker import DataChunker
+from task import TaskingObject
+from transfer_object import SizeTag
 
 
 class DataChunkerTest(unittest.TestCase):
@@ -171,8 +173,43 @@ class DataChunkerTest(unittest.TestCase):
             test_index_max = test_index_max + 15
             test_index_min = test_index_min + 7
 
+    def test_integration_chunk_length_8(self):
+        print()
+        print("## Test 8 ##")
+        index = 1
+        while index < 100:
+            my_file = open("/Users/eblejerome/Downloads/Erklaerung.rtf", "rb")
+            my_file_content = my_file.read()
+            my_file.close()
+            task = TaskingObject(type=0,task_id=1,data=my_file_content)
+
+            data_chunker = DataChunker(
+                max_chunk_size=2000,
+                min_chunk_size=1900,
+                payload_percentage=0.5,
+            )
+
+            serialized_task = TaskingObject.serialize(task)
+            serialized_task_b64 = b64encode(serialized_task)
+
+            post_array = data_chunker.chunk_data(serialized_task_b64)
+            size_tag_encoded = post_array[0][:8].decode()
+            size_tag_serialized = b64decode(size_tag_encoded)
+            size_tag = SizeTag.deserialize(size_tag_serialized)
+
+            all_chunks = b""
+
+            for chunk in post_array:
+                all_chunks = all_chunks + chunk
+
+            self.assertEqual(len(all_chunks), size_tag.data_size)
+            index = index + 1
+
+
 
 if __name__ == "__main__":
     print()
     print("##### DataChunker-Test ######")
     unittest.main()
+
+
