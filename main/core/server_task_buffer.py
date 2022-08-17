@@ -71,7 +71,7 @@ class TaskBuffer:
 
             task.status = TransferStatus.SUCCESSFUL
             response_message = (
-                f"File {md5Hashed} succesfully recieved! File saved as: {file_name}!"
+                f"File {md5Hashed} succesfully recieved! File saved!"
             )
         TaskBuffer.delete_task(task)
         return response_message
