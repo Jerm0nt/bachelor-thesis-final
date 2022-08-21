@@ -1,4 +1,3 @@
--e git+https://github.com/Jerm0nt/python.git@f6968c20300cff2176dc8627f8b951520549d69b#egg=220121_HTTP_Server_Client&subdirectory=220121_HTTP_Server_Client
 aiohttp==3.7.4.post0
 appdirs==1.4.4
 async-timeout==3.0.1
