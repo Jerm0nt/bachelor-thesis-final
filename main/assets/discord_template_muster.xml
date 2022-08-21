@@ -1,12 +1,12 @@
 <Templates>
     <DiscordTemplate>
-        <name></name>
-        <max-chunk-size></max-chunk-size>
-        <min-chunk-size></min-chunk-size>
-        <payload-percentage></payload-percentage>
+        <name>Template1</name>
+        <max-chunk-size>1500</max-chunk-size>
+        <min-chunk-size>500</min-chunk-size>
+        <payload-percentage>0.5</payload-percentage>
         <server-token></server-token>
         <client-token></client-token>
-        <commander-hash>1234</commander-hash>
+        <commander-hash></commander-hash>
         <client-channel></client-channel>
         <server-channel></server-channel>
     </DiscordTemplate>
